@@ -1,0 +1,15 @@
+name: 问题反馈
+description: 提供版本和复现步骤，请先移除敏感信息
+body:
+  - type: textarea
+    id: versions
+    attributes:
+      label: DSH、插件、App 版本与连接方式
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤、预期和实际结果
+    validations:
+      required: true

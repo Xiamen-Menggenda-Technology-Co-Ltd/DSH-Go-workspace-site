@@ -1,0 +1,1 @@
+document.querySelector('#copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(document.querySelector('#command').textContent);document.querySelector('#copy-status').textContent='已复制安装命令；请在版本发布后使用。'}catch{document.querySelector('#copy-status').textContent='请选中并手动复制命令。'}});
