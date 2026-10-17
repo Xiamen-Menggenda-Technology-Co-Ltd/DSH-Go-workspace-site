@@ -4,13 +4,13 @@ DSHarness Go 电脑互联插件。支持局域网 HTTPS 配对、设备管理、
 
 ## 安装
 
-当前准备版本为 0.6.4-desktop.13，来源于电脑客户端实际安装包；此页面不表示该版本已发布 npm。发布到 npm 后，DSH Web 安装命令为：
+npm 公共预览版本为 0.6.4-desktop.13，来源于电脑客户端实际安装包。DSH Web 安装命令为：
 
 ```sh
 dsh plugin --profile web add dsh-go-workspace
 ```
 
-预览版发布至 next 标签时，请安装实际版本：
+也可指定准确版本：
 
 ```sh
 dsh plugin --profile web add dsh-go-workspace@0.6.4-desktop.13
