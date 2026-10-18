@@ -4,7 +4,7 @@ DSHarness Go 电脑互联插件。支持局域网 HTTPS 配对、设备管理、
 
 ## 安装
 
-npm 公共预览版本为 0.6.4-desktop.13，来源于电脑客户端实际安装包。DSH Web 安装命令为：
+npm 公共预览版本为 0.6.4-desktop.14，来源于电脑客户端实际安装包。DSH Web 安装命令为：
 
 ```sh
 dsh plugin --profile web add dsh-go-workspace
@@ -13,7 +13,7 @@ dsh plugin --profile web add dsh-go-workspace
 也可指定准确版本：
 
 ```sh
-dsh plugin --profile web add dsh-go-workspace@0.6.4-desktop.13
+dsh plugin --profile web add dsh-go-workspace@0.6.4-desktop.14
 ```
 
 Desktop 请使用客户端插件页，安装到客户端所管理的 profile。
@@ -34,4 +34,4 @@ Desktop 请使用客户端插件页，安装到客户端所管理的 profile。
 
 ## 对应源码
 
-本版本对应源码与构建输入：[下载源码归档](https://github.com/Xiamen-Menggenda-Technology-Co-Ltd/DSH-Go-workspace-site/releases/download/plugin-v0.6.4-desktop.13/dsh-go-workspace-0.6.4-desktop.13-corresponding-source.tar.gz)。原作者归属、Apache-2.0 与 AGPL-3.0 许可保留在归档中。开发历史和独立服务器配置不包含在展示仓库内。
+本版本对应源码与构建输入：[下载源码归档](https://github.com/Xiamen-Menggenda-Technology-Co-Ltd/DSH-Go-workspace-site/releases/download/plugin-v0.6.4-desktop.14/dsh-go-workspace-0.6.4-desktop.14-corresponding-source.tar.gz)。原作者归属、Apache-2.0 与 AGPL-3.0 许可保留在归档中。开发历史和独立服务器配置不包含在展示仓库内。
