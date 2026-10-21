@@ -1,1 +1,232 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="DSHarness Go 的电脑互联插件：局域网配对、GO 账号和同账号远程连接。"><title>DSH Go-workspace · 随时继续对话</title><link rel="stylesheet" href="style.css"><script src="site.js" defer></script></head><body><nav><a class="brand" href="#top">DSH <span>Go-workspace</span></a><div><a href="#connect">连接教程</a><a href="#preview">界面预览</a><a href="#support">帮助</a></div></nav><main id="top"><header><p class="eyebrow">DSHARNESS GO / 电脑互联插件</p><h1>你的工作区，<br>随手就能继续。</h1><p class="lead">让 DSHarness Go 手机 App 连接电脑上的 DeepSeek Harness。局域网配对，或通过同账号远程连接，在手机上继续工作。</p><div class="actions"><a class="button" href="#install">查看安装方式 ↗</a><a class="text-link" href="#preview">看看插件界面 ↓</a></div><p class="status">公开预览 · 0.6.4-desktop.14 · npm 已发布</p></header><section class="intro"><p>一个入口，两种连接方式。</p><div><h2>在身边，直接连。<br>出门后，同账号继续。</h2><p>局域网使用 HTTPS 配对与设备授权。远程连接由手机和电脑登录同一账号，首次核对安全码并在电脑确认。电脑需保持运行、联网。</p></div></section><section id="preview"><div class="section-title"><p class="eyebrow">界面预览</p><h2>从电脑侧栏开始。</h2><p>以下为当前插件构建的隔离测试截图，账号与地址均为测试数据。</p></div><div class="screens"><figure><img src="assets/lan.png" alt="插件局域网面板，包含开启状态和设备管理按钮" loading="lazy"><figcaption>01 / 本地局域网与设备管理</figcaption></figure><figure><img src="assets/account.png" alt="GO 账号面板，包含密码与 App 扫码登录入口" loading="lazy"><figcaption>02 / GO 账号登录与 App 扫码登录</figcaption></figure></div></section><section id="connect"><p class="eyebrow">连接教程</p><h2>三步，连接你的电脑。</h2><ol class="steps"><li><span>01</span><div><h3>安装并打开插件</h3><p>安装完成后启用 DSH Go-workspace，在侧栏打开「DSHarness Go 互联插件」。Desktop 使用其插件页管理安装。</p></div></li><li><span>02</span><div><h3>选择连接方式</h3><p>同一网络选择「本地局域网」，开启访问并生成配对信息；远程连接先在「GO 账号登录」登录，手机使用同一已验证账号。</p></div></li><li><span>03</span><div><h3>核对并授权</h3><p>手机在「连接电脑」中发起连接。远程首次连接需核对安全码并由电脑允许；App 扫码登录需要手机确认，登录本身不授予远程访问权限。</p></div></li></ol><p class="note">账号与扫码功能需 App 和账号服务同时兼容。仅安装插件无法升级服务器或手机。</p></section><section id="install" class="install"><p class="eyebrow">安装入口</p><h2>准备好，就从这里开始。</h2><p>已发布 npm 公共安装包。DSH Web 使用以下命令，或指定版本安装。Desktop 请在客户端插件页安装。</p><div class="command"><code id="command">dsh plugin --profile web add dsh-go-workspace</code><button id="copy" type="button">复制</button></div><p id="copy-status" role="status" aria-live="polite"></p><p><code>dsh plugin --profile web add dsh-go-workspace@0.6.4-desktop.14</code></p><a class="text-link" href="https://www.npmjs.com/package/dsh-go-workspace">查看 npm 包 ↗</a></section><section id="support"><p class="eyebrow">帮助与更新</p><h2>有问题，留下清晰的线索。</h2><p>请提供 DSH、App、插件版本与复现步骤。可在公开仓库提交问题，也可先下载反馈模板。</p><div class="actions"><a class="button" href="https://github.com/Xiamen-Menggenda-Technology-Co-Ltd/DSH-Go-workspace-site/issues/new/choose">提交问题 ↗</a><a class="text-link" href="feedback.md" download>下载反馈模板</a><a class="text-link" href="CHANGELOG.md">查看更新日志 ↗</a><a class="text-link" href="README.md">完整使用说明 ↗</a></div><details><summary>连接失败时先检查什么？</summary><p>确认插件启用、电脑在线且手机能到达所选地址。局域网检查网络隔离和防火墙；账号连接确认两端账号一致、邮箱已验证、远程连接已开启。可在插件「诊断」查看状态。</p></details><details><summary>如何撤销手机授权？</summary><p>在电脑插件设备管理中选择对应设备撤销。局域网配对与账号远程授权分别管理，操作前确认连接方式。</p></details><details><summary>运行代码与许可证</summary><p>公共安装包中的运行代码可以查看。插件保留 Apache-2.0 与 AGPL-3.0-only 许可；发布时需要提供相应源码。私有开发仓库保存的提交历史、独立服务器配置和部署资料分别管理。</p></details></section></main><footer>DSH Go-workspace · 专用于 DSHarness Go App<br>当前为公开预览版。Android App 需单独安装；本页面不提供稳定 APK 下载。<p class="filing"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">闽ICP备2026030407号</a></p></footer></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>DSHarness Go 互联插件 · DSH Go-workspace</title>
+  <meta name="description" content="DSHarness Go 电脑互联插件：通过局域网或同账号远程连接，把电脑上的 DeepSeek Harness 工作区、会话、消息和任务接到手机。">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" href="assets/app-icon-tile.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="header-bar" id="headerBar">
+      <a class="brand" href="#top" aria-label="DSHarness Go 互联插件首页">
+        <img src="assets/app-icon-tile.png" alt="" width="28" height="28">
+        <span class="brand-word">DSHarness</span>
+        <span class="brand-chip">GO</span>
+        <span class="plugin-tag">互联插件</span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="#modes">连接方式</a>
+        <a href="#preview">界面</a>
+        <a href="#connect">教程</a>
+        <a href="#install">安装</a>
+        <a href="#support">帮助</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-secondary" href="https://dsharnessgo.top/" target="_blank" rel="noopener">主站</a>
+        <a class="btn btn-primary" href="#install">安装插件</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <p class="eyebrow">DSH GO-WORKSPACE · 电脑互联插件</p>
+        <h1>你的工作区，<br><span class="grad">随手就能继续。</span></h1>
+        <p class="lead">让 DSHarness Go 手机 App 连接电脑上的 DeepSeek Harness。局域网配对，或通过同账号远程连接，在手机上继续工作。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="#install">安装插件</a>
+          <a class="btn btn-secondary btn-lg" href="#connect">连接教程</a>
+        </div>
+        <p class="hero-meta">公开预览 · 0.6.4-desktop.14 · npm 已发布</p>
+
+        <div class="hero-preview">
+          <div class="window">
+            <div class="window-bar">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="window-title">DSH Go-workspace</span>
+              <span class="window-meta">电脑端 · 互联面板</span>
+            </div>
+            <div class="shot-grid">
+              <figure class="shot">
+                <div class="shot-frame"><img src="assets/lan-card.png" alt="局域网配对与设备管理"></div>
+                <figcaption>本地局域网 · 配对与设备管理</figcaption>
+              </figure>
+              <figure class="shot">
+                <div class="shot-frame"><img src="assets/account-card.png" alt="GO 账号登录与 App 扫码登录"></div>
+                <figcaption>GO 账号登录 · App 扫码登录</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="modes">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">两种连接方式</p>
+          <h2>在身边直接连，<br>出门后同账号继续。</h2>
+          <p>局域网使用 HTTPS 配对与设备授权；远程连接由手机和电脑登录同一账号，首次核对安全码并在电脑确认。</p>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <span class="card-icon"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3" width="12" height="8" rx="1.5"/><path d="M6 14h4M8 11v3"/></svg></span>
+            <h3>本地局域网</h3>
+            <p>手机与电脑在同一网络。电脑端开启访问并生成配对信息，手机扫码或确认连接。</p>
+            <ul class="check-list">
+              <li>HTTPS 配对</li>
+              <li>设备授权与撤销</li>
+              <li>不依赖公网 IP</li>
+            </ul>
+          </article>
+          <article class="card">
+            <span class="card-icon"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.5"/><path d="M2.5 8h11M8 2.5c2 2 2 9 0 11M8 2.5c-2 2-2 9 0 11"/></svg></span>
+            <h3>同账号远程</h3>
+            <p>手机与电脑登录同一已验证账号。电脑保持运行和联网，首次连接核对安全码后允许。</p>
+            <ul class="check-list">
+              <li>GO 账号登录</li>
+              <li>App 扫码登录</li>
+              <li>远程授权独立管理</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="preview">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">界面预览</p>
+          <h2>从电脑侧栏开始。</h2>
+          <p>以下为插件当前构建的隔离测试截图，账号与地址均为测试数据。</p>
+        </div>
+        <div class="grid-2">
+          <figure class="shot">
+            <div class="shot-frame"><img src="assets/lan-card.png" alt="插件局域网面板" loading="lazy"></div>
+            <figcaption>01 / 本地局域网与设备管理</figcaption>
+          </figure>
+          <figure class="shot">
+            <div class="shot-frame"><img src="assets/account-card.png" alt="插件 GO 账号面板" loading="lazy"></div>
+            <figcaption>02 / GO 账号登录与 App 扫码登录</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="connect">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">连接教程</p>
+          <h2>三步，连接你的电脑。</h2>
+        </div>
+        <ol class="steps">
+          <li>
+            <span>01</span>
+            <div>
+              <h3>安装并打开插件</h3>
+              <p>安装完成后启用 DSH Go-workspace，在侧栏打开「DSHarness Go 互联插件」。Desktop 使用其插件页管理安装。</p>
+            </div>
+          </li>
+          <li>
+            <span>02</span>
+            <div>
+              <h3>选择连接方式</h3>
+              <p>同一网络选择「本地局域网」，开启访问并生成配对信息；远程连接先在「GO 账号登录」登录，手机使用同一已验证账号。</p>
+            </div>
+          </li>
+          <li>
+            <span>03</span>
+            <div>
+              <h3>核对并授权</h3>
+              <p>手机在「连接电脑」中发起连接。远程首次连接需核对安全码并由电脑允许；App 扫码登录需要手机确认，登录本身不授予远程访问权限。</p>
+            </div>
+          </li>
+        </ol>
+        <p class="note">账号与扫码功能需 App 和账号服务同时兼容。仅安装插件无法升级服务器或手机。</p>
+      </div>
+    </section>
+
+    <section class="section" id="install">
+      <div class="wrap">
+        <div class="install-card">
+          <p class="eyebrow">安装入口</p>
+          <h2>准备好，就从这里开始。</h2>
+          <p>已发布 npm 公共安装包。DSH Web 使用以下命令，或指定版本安装。Desktop 请在客户端插件页安装。</p>
+          <div class="command">
+            <code id="command">dsh plugin --profile web add dsh-go-workspace</code>
+            <button id="copy" type="button">复制</button>
+          </div>
+          <p id="copy-status" role="status" aria-live="polite"></p>
+          <p class="version">指定版本：<code>dsh plugin --profile web add dsh-go-workspace@0.6.4-desktop.14</code></p>
+          <a class="text-link" href="https://www.npmjs.com/package/dsh-go-workspace" target="_blank" rel="noopener">查看 npm 包 <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="support">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">帮助与更新</p>
+          <h2>有问题，留下清晰的线索。</h2>
+          <p>请提供 DSH、App、插件版本与复现步骤。可在公开仓库提交问题，也可先下载反馈模板。</p>
+        </div>
+        <div class="support-actions">
+          <a class="btn btn-primary" href="https://github.com/Xiamen-Menggenda-Technology-Co-Ltd/DSH-Go-workspace-site/issues/new/choose" target="_blank" rel="noopener">提交问题 <span class="arrow">→</span></a>
+          <a class="btn btn-secondary" href="feedback.md" download>下载反馈模板</a>
+          <a class="text-link" href="CHANGELOG.md">查看更新日志 →</a>
+          <a class="text-link" href="README.md">完整使用说明 →</a>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>连接失败时先检查什么？</summary>
+            <p>确认插件启用、电脑在线且手机能到达所选地址。局域网检查网络隔离和防火墙；账号连接确认两端账号一致、邮箱已验证、远程连接已开启。可在插件「诊断」查看状态。</p>
+          </details>
+          <details>
+            <summary>如何撤销手机授权？</summary>
+            <p>在电脑插件设备管理中选择对应设备撤销。局域网配对与账号远程授权分别管理，操作前确认连接方式。</p>
+          </details>
+          <details>
+            <summary>运行代码与许可证</summary>
+            <p>公共安装包中的运行代码可以查看。插件保留 Apache-2.0 与 AGPL-3.0-only 许可；发布时需要提供相应源码。私有开发仓库保存的提交历史、独立服务器配置和部署资料分别管理。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="#top">
+            <img src="assets/app-icon-tile.png" alt="" width="24" height="24">
+            <span class="brand-word">DSHarness</span>
+            <span class="brand-chip">GO</span>
+            <span class="plugin-tag">互联插件</span>
+          </a>
+          <p>DSH Go-workspace · 专用于 DSHarness Go App<br>当前为公开预览版。Android App 需单独安装；本页面不提供稳定版 APK 下载。</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://dsharnessgo.top/" target="_blank" rel="noopener">DSHarness Go 主站</a>
+          <a href="https://github.com/mionio233-collab/dsharness-go/releases" target="_blank" rel="noopener">App 下载</a>
+          <a href="https://www.npmjs.com/package/dsh-go-workspace" target="_blank" rel="noopener">npm 包</a>
+          <a href="https://github.com/Xiamen-Menggenda-Technology-Co-Ltd/DSH-Go-workspace-site/issues" target="_blank" rel="noopener">问题反馈</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>DeepSeek Harness 及其相关名称、标识、商标与版权归 DeepSeek 公司所有；本插件为第三方生态组件，非 DeepSeek 官方产品。</span>
+        <span>字体：DM Sans / Montserrat / Host Grotesk / Fragment Mono（SIL OFL）</span>
+      </div>
+      <p class="filing"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">闽ICP备2026030407号</a></p>
+    </div>
+  </footer>
+
+  <script src="site.js" defer></script>
+</body>
+</html>
