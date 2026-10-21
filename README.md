@@ -2,6 +2,8 @@
 
 DSHarness Go 电脑互联插件。支持局域网 HTTPS 配对、设备管理、GO 账号登录、App 扫码登录，以及同账号远程连接。
 
+官方网站：<https://dsharnessgo.xmmgd.top/>。
+
 ## 安装
 
 npm 公共预览版本为 0.6.4-desktop.14，来源于电脑客户端实际安装包。DSH Web 安装命令为：
